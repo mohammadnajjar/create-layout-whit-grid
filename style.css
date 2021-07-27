@@ -1,0 +1,63 @@
+body{
+    background-color: #aaa;
+    margin: 0;
+    text-align: center;
+}
+.grid-container{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-areas: 
+    "hd hd hd hd"
+    "ad mn mn mn"
+    "ad mn mn mn"
+    "fr fr fr fr"
+    ;
+}
+.grid-container > *{
+    padding: 30px;
+    color:#fff;
+}
+header{grid-area: hd;background-color: #080;}
+main{grid-area: mn;background-color: #080;}
+aside{
+    grid-area: ad; 
+    background-color: #333;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap:8px;
+    grid-auto-rows: minmax(100px ,auto);
+}
+aside p{
+    border:1px solid #000;
+    line-height: 100px; /* tawset karam */
+}
+footer{grid-area: fr; background-color: #333;}
+.list{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    list-style: none;
+}
+.social{
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    list-style: none;
+}
+li {
+    margin: 5px;
+}
+
+@media(max-width:575px){
+    .grid-container{
+        display: grid;
+        grid-gap: 10px;
+        grid-template-areas: 
+        "hd hd hd hd"
+        "ad ad ad ad"
+        "mn mn mn mn"
+        "mn mn mn mn"
+        "fr fr fr fr"
+        ;
+    } 
+}
